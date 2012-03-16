@@ -1,0 +1,2 @@
+This is a small tool to visualize a dom tree presents by BeautifulSoup.
+It can be used to discover some repeat elements in the dom structure. 
