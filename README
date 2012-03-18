@@ -1,2 +1,18 @@
-This is a small tool to visualize a dom tree presents by BeautifulSoup.
-It can be used to discover some repeat elements in the dom structure. 
+This is a small tool to visualize a tree 
+structure.
+
+You should write the following functions for the draw_tree
+function to use:
+
+get_width        : get the tree width
+get_depth        : get the tree depth
+get_tag          : return the node name to print
+iter_children    : get the children
+is_leaf          : check if the node is a leaf
+
+It depends on PIL
+
+Right now, there are two example to use this little tool:
+
+htmltree.py htmltree.jpg which draws a dom tree
+listtree.py listtree.jpg which draws a list presented tree
