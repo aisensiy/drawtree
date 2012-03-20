@@ -6,8 +6,6 @@ structure.
 You should write the following functions for the draw_tree
 function to use:
 
-get_width        : get the tree width
-get_depth        : get the tree depth
 get_tag          : return the node name to print
 iter_children    : get the children
 is_leaf          : check if the node is a leaf
@@ -19,8 +17,16 @@ __author__ = 'aisensiy<aisensiy@gmail.com>'
 
 from PIL import Image, ImageDraw
 
-def draw_tree(dom, filepath, get_width, get_depth, get_tag, iter_children, is_leaf):
-    scalex = 40
+def draw_tree(dom, filepath, get_tag, iter_children, is_leaf):
+    def get_width(node):
+        if is_leaf(node): return 1
+        return sum(get_width(n) for n in iter_children(node))
+
+    def get_depth(node):
+        if is_leaf(node): return 1
+        return max(get_depth(n) for n in iter_children(node)) + 1
+
+    scalex = 60
     scaley = 30
     width = get_width(dom) * scalex
     depth = get_depth(dom) * scaley

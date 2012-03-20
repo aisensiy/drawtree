@@ -4,8 +4,6 @@ structure.
 You should write the following functions for the draw_tree
 function to use:
 
-get_width        : get the tree width
-get_depth        : get the tree depth
 get_tag          : return the node name to print
 iter_children    : get the children
 is_leaf          : check if the node is a leaf
